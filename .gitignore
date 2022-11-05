@@ -1,0 +1,6 @@
+.idea/
+.idea/*
+.env.py
+db.sqlite3
+smart_home_backoffice/__pycache__/*
+smart_home_backoffice/__pycache__
