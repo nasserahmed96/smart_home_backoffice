@@ -4,3 +4,6 @@
 db.sqlite3
 smart_home_backoffice/__pycache__/*
 smart_home_backoffice/__pycache__
+home_residents/migrations/*
+home_residents/__pycache__/*
+home_residents/__pycache__
