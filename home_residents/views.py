@@ -8,6 +8,7 @@ from django.views.decorators.csrf import ensure_csrf_cookie
 from rest_framework_simplejwt.tokens import AccessToken
 from .models import HomeResident
 
+
 # Create your views here.
 
 
@@ -18,5 +19,11 @@ def get_user_details(request):
     user = AccessToken(request_body['access'])
     print(type(user))
     print('User: ', user['user_id'])
-    home_resident = HomeResident()
+    home_resident = HomeResident.objects.all()
+    print('Resident: ', home_resident)
     return Response(json.dumps('{user: user_details}'), status=status.HTTP_200_OK)
+
+@api_view(['POST'])
+@ensure_csrf_cookie
+def create_home_resident(request):
+    home_resident_data = request.data
