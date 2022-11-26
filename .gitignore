@@ -7,3 +7,6 @@ smart_home_backoffice/__pycache__
 home_residents/migrations/*
 home_residents/__pycache__/*
 home_residents/__pycache__
+devices/__pycahe__/*
+devices/__pycache__
+devices/migrations/*
