@@ -13,16 +13,12 @@ from .serializers import HomeResidentSerializer
 # Create your views here.
 
 
-"""@api_view(['POST'])
+@api_view(['POST'])
 @ensure_csrf_cookie
 def get_user_details(request):
-    request_body = request.data
-    user = AccessToken(request_body['access'])
-    print(type(user))
-    print('User: ', user['user_id'])
-    home_resident = HomeResident.objects.all()
-    print('Resident: ', home_resident)
-    return Response(json.dumps('{user: user_details}'), status=status.HTTP_200_OK)"""
+    user = AccessToken(request.headers['Authorization'].replace('Bearer ', ''))
+    home_resident = HomeResident.objects.get(user__id=user['user_id'])
+    return Response(HomeResidentSerializer(home_resident, many=False).data, status=status.HTTP_200_OK)
 
 
 @api_view(['POST'])
