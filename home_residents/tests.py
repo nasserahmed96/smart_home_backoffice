@@ -17,7 +17,7 @@ class HomeResidentTestCases(TestCase):
                 'home_resident':
                     {
                         'user': None,
-                        'phone_number': '+01091238274'
+                        'phone_number': '+01091238274',
                     }
             },
             {
