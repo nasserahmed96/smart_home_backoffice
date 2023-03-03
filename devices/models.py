@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 from home_residents.models import HomeResident
 # Create your models here.
 
@@ -11,5 +12,5 @@ class Device(models.Model):
     brand = models.TextField()
     last_online = models.DateTimeField()
     owner = models.ForeignKey(HomeResident, on_delete=models.CASCADE)
-    created_by = models.ForeignKey(HomeResident, on_delete=models.CASCADE)
+    created_by = models.ForeignKey(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now=True)
